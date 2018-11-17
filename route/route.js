@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var responses= require("./../controller/file");
+var responses= require("./../controller/controller");
 
 router.post('/create', responses.create_data);
 router.get('/get', responses.retrieve_all);
