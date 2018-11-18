@@ -33,7 +33,7 @@ exports.create = (req, res) => {
 // Retrieve and return all notes from the database.
 exports.findAll = (req, res) => {
 
-    //sort response of findAll in descending order according to date
+    //sort response of findAll in descending order according to date and "deleted:false"
     Note.find({deleted: {$ne: true}}).sort({date: 'desc'})
     .then(note => {
         res.json(note);
