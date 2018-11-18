@@ -11,9 +11,9 @@ const mySchema = new Schema({
 	
 	username: {type: String, required: true, max: 100},
     age: {type: Number, required: true},
-    date: {type: Date,default: Date.now()}
+    date: {type: Date,default: Date.now()},
+    deleted: { type: Boolean, default: false }
 });
 
 const MyModel = mongoose.model('MyModel', mySchema);
 module.exports = MyModel;
-
