@@ -134,7 +134,12 @@ exports.patch = (req, res) => {
         }
 
         //Patch request for making the deleted boolean -> true
-        note.deleted = true;
+        if (note.deleted == false) {
+            note.deleted = true;
+        } 
+        else {
+            note.deleted = false;
+        }
 
         //save
         note.save();
